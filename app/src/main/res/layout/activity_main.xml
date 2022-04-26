@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="-1dp"
+    tools:layout_editor_absoluteY="8dp">
 
     <TextView
         android:id="@+id/tv_num1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
-        android:text="0.0"
         android:textAlignment="textEnd"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,9 +26,10 @@
         android:id="@+id/tv_num2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="0.0"
+        android:hint="0.0"
         android:textAlignment="textEnd"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:text="C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_num2" />
@@ -48,6 +51,7 @@
         android:id="@+id/siete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="7"
         app:layout_constraintBaseline_toBaselineOf="@+id/ocho"
         app:layout_constraintEnd_toStartOf="@+id/ocho"
@@ -58,6 +62,7 @@
         android:id="@+id/ocho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="8"
         app:layout_constraintBaseline_toBaselineOf="@+id/nueve"
         app:layout_constraintEnd_toStartOf="@+id/nueve"
@@ -90,6 +95,7 @@
         android:id="@+id/seis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="6"
         app:layout_constraintBaseline_toBaselineOf="@+id/resta"
         app:layout_constraintEnd_toStartOf="@+id/resta"
@@ -100,6 +106,7 @@
         android:id="@+id/cinco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="5"
         app:layout_constraintBaseline_toBaselineOf="@+id/seis"
         app:layout_constraintEnd_toStartOf="@+id/seis"
@@ -121,6 +128,7 @@
         android:id="@+id/dos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="2"
         app:layout_constraintBaseline_toBaselineOf="@+id/tres"
         app:layout_constraintEnd_toStartOf="@+id/tres"
@@ -131,6 +139,7 @@
         android:id="@+id/uno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="1"
         app:layout_constraintBaseline_toBaselineOf="@+id/dos"
         app:layout_constraintEnd_toStartOf="@+id/dos"
@@ -141,6 +150,7 @@
         android:id="@+id/tres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="3"
         app:layout_constraintBaseline_toBaselineOf="@+id/multiplicacion"
         app:layout_constraintEnd_toStartOf="@+id/multiplicacion"
@@ -151,6 +161,7 @@
         android:id="@+id/cuatro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="4"
         app:layout_constraintBaseline_toBaselineOf="@+id/cinco"
         app:layout_constraintEnd_toStartOf="@+id/cinco"
@@ -161,10 +172,54 @@
         android:id="@+id/nueve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
         android:text="9"
         app:layout_constraintBaseline_toBaselineOf="@+id/suma"
         app:layout_constraintEnd_toStartOf="@+id/suma"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ocho" />
+
+    <Button
+        android:id="@+id/cero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
+        android:text="0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/punto"
+        app:layout_constraintEnd_toStartOf="@+id/punto"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="/"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/igual"
+        app:layout_constraintTop_toBottomOf="@+id/multiplicacion" />
+
+    <Button
+        android:id="@+id/igual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        app:layout_constraintBaseline_toBaselineOf="@+id/division"
+        app:layout_constraintEnd_toStartOf="@+id/division"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/punto" />
+
+    <Button
+        android:id="@+id/punto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="presionarDigito"
+        android:text="."
+        app:layout_constraintBaseline_toBaselineOf="@+id/igual"
+        app:layout_constraintEnd_toStartOf="@+id/igual"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cero" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
