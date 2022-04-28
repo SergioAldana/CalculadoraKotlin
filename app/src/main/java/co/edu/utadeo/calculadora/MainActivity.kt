@@ -3,6 +3,7 @@ package co.edu.utadeo.calculadora
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,36 @@ class MainActivity : AppCompatActivity() {
 
         tv_num1 = findViewById(R.id.tv_num1)
         tv_num2 = findViewById(R.id.tv_num2)
+        val borrar: Button = findViewById(R.id.borrar)
+        val igual: Button = findViewById(R.id.igual)
+
+        igual.setOnClickListener {
+            var numero2: Double = tv_num2.text.toString().toDouble()
+            var respuesta: Double = 0.0
+
+            when (operacion) {
+                1 -> respuesta = numero1 + numero2
+                2 -> respuesta = numero1 - numero2
+                3 -> respuesta = numero1 * numero2
+                4 -> {
+                    if (numero2 >= 0) {
+                        respuesta = numero1 / numero2
+                    } else {
+                        val mensaje = "Error"
+                        println("$mensaje")
+                    }
+                }
+            }
+            tv_num2.setText(respuesta.toString())
+            tv_num1.setText("")
+        }
+
+        borrar.setOnClickListener {
+            tv_num1.setText("")
+            tv_num2.setText("")
+            numero1 = 0.0
+            operacion = 0
+        }
     }
 
     fun presionarDigito(view: View) {
@@ -52,15 +83,14 @@ class MainActivity : AppCompatActivity() {
                 tv_num1.setText(num2_text + "-")
                 operacion = 2
             }
-            R.id.suma -> {
+            R.id.multiplicacion -> {
                 tv_num1.setText(num2_text + "x")
                 operacion = 3
             }
-            R.id.suma -> {
+            R.id.division -> {
                 tv_num1.setText(num2_text + "÷")
                 operacion = 4
             }
         }
-
     }
 }

@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_num1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/borrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -80,7 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/nueve"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/borrar" />
 
     <Button
         android:id="@+id/resta"
