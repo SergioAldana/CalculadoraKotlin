@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Calculadora</string>
 
-    <string name="displyHint">Enter a Value</string>
+    <string name="displyHint">0</string>
 
     <string name="oneText">1</string>
     <string name="twoText">2</string>
@@ -21,7 +21,7 @@
     <string name="multiplyText">×</string>
     <string name="addText">+</string>
     <string name="subtractText">-</string>
-    <string name="decimalText">.</string>
+    <string name="commaText">,</string>
     <string name="equalsText">=</string>
 
     <string name="trigSinText">sin</string>
