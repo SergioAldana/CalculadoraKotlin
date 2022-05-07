@@ -12,12 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="50dp"
         android:hint="@string/entrada"
-        android:paddingStart="12.5dp"
-        android:paddingEnd="12.5dp"
         android:textAlignment="textEnd"
         android:textColor="@color/negroClaro"
         android:textSize="50sp"
@@ -29,17 +27,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:paddingStart="12.5dp"
-        android:paddingEnd="12.5dp"
+        android:layout_marginBottom="75dp"
         android:text="10"
         android:textAlignment="textEnd"
         android:textColor="@color/negroClaro"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:layout_constraintTop_toBottomOf="@+id/entrada" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -287,6 +284,17 @@
             app:layout_constraintStart_toStartOf="@+id/button_divide"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/backspace" />
+
+        <Button
+            android:id="@+id/button_mas_menos"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="2.5dp"
+            android:background="@drawable/button_background1"
+            android:text="@string/mas_menosText"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/button_delete"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

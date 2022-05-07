@@ -23,6 +23,7 @@
     <string name="subtractText">-</string>
     <string name="commaText">,</string>
     <string name="equalsText">=</string>
+    <string name="mas_menosText">+/-</string>
 
     <string name="trigSinText">sin</string>
     <string name="trigCosText">cos</string>

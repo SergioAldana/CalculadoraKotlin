@@ -67,6 +67,9 @@ class MainActivity : AppCompatActivity() {
         button_add.setOnClickListener {
             entrada.text = addToInputText("+")
         }
+        button_mas_menos.setOnClickListener {
+            entrada.text = addToInputText("-")
+        }
         button_equal.setOnClickListener {
             showResult()
         }
@@ -83,6 +86,17 @@ class MainActivity : AppCompatActivity() {
         return expression
     }
 
+    /**
+    private fun conversionNumero() {
+        try {
+
+        } catch (e: Exception) {
+            //Aqui va el mensaje si aparece error en la excepcion
+            salida.text = "Error en la excepcion"
+        }
+    }
+    */
+
     private fun showResult() {
         try {
             val expression = getInputExpression()
@@ -97,8 +111,6 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             //Aqui va el mensaje si aparece error en la excepcion
             salida.text = "Error en la excepcion"
-
         }
     }
-
 }
