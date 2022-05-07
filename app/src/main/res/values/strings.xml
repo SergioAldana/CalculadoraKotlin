@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Calculadora</string>
 
-    <string name="displyHint">0</string>
+    <string name="entrada">0</string>
 
     <string name="oneText">1</string>
     <string name="twoText">2</string>

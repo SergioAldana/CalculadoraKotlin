@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:width="40dp" android:drawable="@android:drawable/ic_delete" android:heigth="40dp" />
+    <item android:width="40dp" android:drawable="@android:drawable/ic_delete" android:height="40dp" />
 </selector>
