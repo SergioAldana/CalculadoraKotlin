@@ -7,6 +7,8 @@ import org.mariuszgromada.math.mxparser.Expression
 import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
+    var identificador: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,33 +26,43 @@ class MainActivity : AppCompatActivity() {
         }
         button_0.setOnClickListener {
             entrada.text = addToInputText("0")
+            identificador = 0
         }
         button_1.setOnClickListener {
             entrada.text = addToInputText("1")
+            identificador = 1
         }
         button_2.setOnClickListener {
             entrada.text = addToInputText("2")
+            identificador = 2
         }
         button_3.setOnClickListener {
             entrada.text = addToInputText("3")
+            identificador = 3
         }
         button_4.setOnClickListener {
             entrada.text = addToInputText("4")
+            identificador = 4
         }
         button_5.setOnClickListener {
             entrada.text = addToInputText("5")
+            identificador = 5
         }
         button_6.setOnClickListener {
             entrada.text = addToInputText("6")
+            identificador = 6
         }
         button_7.setOnClickListener {
             entrada.text = addToInputText("7")
+            identificador = 7
         }
         button_8.setOnClickListener {
             entrada.text = addToInputText("8")
+            identificador = 8
         }
         button_9.setOnClickListener {
             entrada.text = addToInputText("9")
+            identificador = 9
         }
         button_comma.setOnClickListener {
             entrada.text = addToInputText(",")
@@ -68,7 +80,9 @@ class MainActivity : AppCompatActivity() {
             entrada.text = addToInputText("+")
         }
         button_mas_menos.setOnClickListener {
-            entrada.text = addToInputText("-")
+            //entrada.text = addToInputText("-")
+            //conversionNumero()
+            entrada.text = ("-$")
         }
         button_equal.setOnClickListener {
             showResult()
@@ -81,18 +95,56 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getInputExpression(): String {
-        var expression = entrada.text.replace(Regex("÷"), "/")
+        var expression = entrada.text
+        expression = expression.replace(Regex("÷"), "/")
         expression = expression.replace(Regex("×"), "*")
+        expression = expression.replace(Regex(","), ".")
         return expression
     }
 
     /**
     private fun conversionNumero() {
         try {
+            when (identificador) {
+                0 -> {
+                    var cero = Integer.parseInt(entrada.text as String)
+                    val retorno = cero * -1
+                }
+                1 -> {
+                    var uno = entrada.text.toString().toInt()
+                    val retorno = uno * -1
+                    retorno.toString()
+                }
+                2 -> {
+                    Integer.parseInt(entrada.text as String)
+                    var dos = Integer.parseInt(entrada.text as String)
+                    val retorno = dos * -1
+                    retorno.toString()
+                }
+                3 -> Integer.parseInt(entrada.text as String)
+                4 -> Integer.parseInt(entrada.text as String)
+                5 -> Integer.parseInt(entrada.text as String)
+                6 -> Integer.parseInt(entrada.text as String)
+                7 -> Integer.parseInt(entrada.text as String)
+                8 -> Integer.parseInt(entrada.text as String)
+                9 -> Integer.parseInt(entrada.text as String)
+            }
+
+            //multiplicando por -1 cambia para ambos valores
+            //le puede llegar no solo numero
+            //verificacion de que se a un nmero
 
         } catch (e: Exception) {
-            //Aqui va el mensaje si aparece error en la excepcion
-            salida.text = "Error en la excepcion"
+            salida.text = "Error en el metodo conversionNumero"
+        }
+    }
+
+
+    private fun numberButtonClick() {
+        if (operadorCliqueado) {
+            operando1 = strNumber.toString().toInt()
+            strNumber.clear
+            operadorCliqueado = false
         }
     }
     */
@@ -102,15 +154,12 @@ class MainActivity : AppCompatActivity() {
             val expression = getInputExpression()
             val result = Expression(expression).calculate()
             if (result.isNaN()) {
-                //Aqui va el error del if
                 salida.text = "Error"
             } else {
-                //Aqui va el resultado
                 salida.text = DecimalFormat("0.#######").format(result).toString()
             }
         } catch (e: Exception) {
-            //Aqui va el mensaje si aparece error en la excepcion
-            salida.text = "Error en la excepcion"
+            salida.text = "Error en el metodo showResult"
         }
     }
 }
