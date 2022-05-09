@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Colors for the background -->
+    <color name="gris1">#C8BDC5CF</color>
+    <color name="gris2">#BDC5CF</color>
+
+    <!-- Colors to add a little pop to the buttons -->
+    <color name="gris3">#DCDFE3</color>
+    <color name="negroClaro">#1E1E1E</color>
+
+    <!-- Equals Button Colors -->
+    <color name="blueBackground">#95B4DD</color>
 </resources>
