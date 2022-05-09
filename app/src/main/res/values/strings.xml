@@ -21,7 +21,7 @@
     <string name="multiplyText">×</string>
     <string name="addText">+</string>
     <string name="subtractText">-</string>
-    <string name="commaText">,</string>
+    <string name="dotText">.</string>
     <string name="equalsText">=</string>
     <string name="mas_menosText">+/-</string>
 
